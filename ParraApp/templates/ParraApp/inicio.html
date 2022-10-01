@@ -1,0 +1,32 @@
+{% extends "ParraApp/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %}
+
+Hola
+
+{% endblock %}
+
+
+{% block discripcion %}
+
+<form action="/ParraApp/resultados/"method="GET"> 
+       
+        
+    <input type="number" name="Camada" id="camada">
+    
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p>Estamos Buscando La camada: {{camada}}</p>
+
+{% for curso in cursos %}
+    
+    <p>Nombre: {{curso.nombre}} ---- Camada: {{curso.camada}}</p>
+
+{% endfor %}
+
+{% endblock %}

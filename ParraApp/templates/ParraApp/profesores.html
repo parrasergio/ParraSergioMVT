@@ -1,0 +1,22 @@
+{% extends 'ParraApp/padre.html' %}
+
+
+{% load static %}
+
+{% block titulo %}
+
+Hola Profesor
+
+{% endblock %}
+
+
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'Register' %}">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Login' %}">Iniciar Sesión</a></li>
+                        {% endif %}
+
+                        {% if user.is_authenticated %}
+                        
+                        <p style="color:white">Hola, {{user.username}}</p>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Editar Usuario' %}">Editar Usuario</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Logout' %}">Cerrar sesión</a></li>
+                        {% endif %}
